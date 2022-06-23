@@ -1,0 +1,41 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+//going with Keys X,Y,Z
+
+public class sagsol : MonoBehaviour
+{
+    Rigidbody rigi;
+
+    bool sag;
+    bool sol;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        rigi = GetComponent<Rigidbody>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKey("s"))
+        {
+            GetComponent<Rigidbody>().AddForce(0, 0, 3, ForceMode.Force);
+        }
+        if (Input.GetKey("w"))
+        {
+            GetComponent<Rigidbody>().AddForce(0, 1, -3, ForceMode.Force);
+        }
+        if (Input.GetKey("d"))
+        {
+            GetComponent<Rigidbody>().AddForce(-3, 0, 0, ForceMode.Force);
+        }
+        if (Input.GetKey("a"))
+        {
+            GetComponent<Rigidbody>().AddForce(3, 0, 0, ForceMode.Force);
+        }
+    }
+}
