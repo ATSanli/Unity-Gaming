@@ -50,8 +50,23 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "Obstacle")
         {
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadScene("Level01");
         }
+        if (other.gameObject.tag == "Sphere/Obstacle")
+        {
+            SceneManager.LoadScene("Level01");
+        }
+        if (other.gameObject.tag == "Finish")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        if (other.gameObject.tag == "puan")
+        {
+            Destroy(other.gameObject);
+        }
+
+
     }
+   
 
 }
